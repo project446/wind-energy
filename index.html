@@ -1,1 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wind Energy - Clean Power for the Future</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    header {
+      background: #0288d1;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    
+    nav {
+      background: #0277bd;
+      padding: 15px;
+      text-align: center;
+    }
+    
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    
+    nav a:hover {
+      color: #ffe082;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    
+    .section {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 35px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    h2 {
+      color: #0277bd;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #81d4fa;
+      padding-bottom: 10px;
+    }
+    
+    .wind-turbine-img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    
+    .fact-box {
+      background: #e1f5fe;
+      border-left: 6px solid #0288d1;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 8px;
+    }
+    
+    .advantages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+    }
+    
+    .card {
+      background: #f5faff;
+      border: 2px solid #81d4fa;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .card h3 {
+      color: #0277bd;
+      margin-bottom: 12px;
+    }
+    
+    footer {
+      background: #0277bd;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+    
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      nav a { display: block; margin: 12px 0; }
+    }
+  </style>
+</head>
+<body>
 
+  <header>
+    <h1>Wind Energy</h1>
+    <p>Clean • Renewable • Powerful</p>
+  </header>
+
+  <nav>
+    <a href="#what">What is it?</a>
+    <a href="#how">How it works</a>
+    <a href="#good">Advantages</a>
+    <a href="#bad">Challenges</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="section" id="what">
+      <h2>What is Wind Energy?</h2>
+      
+      <p>Wind energy is electricity made from the <strong>power of wind</strong>.</p>
+      
+      <p>We use very tall machines called <strong>wind turbines</strong> to catch the wind and turn it into electricity.</p>
+      
+      <img src="https://images.unsplash.com/photo-1509395596868-d7976f91a8d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+           alt="Wind turbines in a field" 
+           class="wind-turbine-img">
+    </div>
+
+    <div class="section" id="how">
+      <h2>How Does a Wind Turbine Work?</h2>
+      
+      <ol>
+        <li>Wind blows → spins the blades</li>
+        <li>Blades turn a rotor (like a big fan)</li>
+        <li>Rotor spins a generator inside</li>
+        <li>Generator makes electricity</li>
+        <li>Electricity travels through wires to our homes</li>
+      </ol>
+      
+      <div class="fact-box">
+        <strong>Fun fact:</strong> The blades of a big wind turbine are usually 50–80 meters long — that's longer than a blue whale!
+      </div>
+    </div>
+
+    <div class="section" id="good">
+      <h2>Advantages of Wind Energy</h2>
+      
+      <div class="advantages">
+        <div class="card">
+          <h3>Clean energy</h3>
+          <p>No smoke, no pollution, no CO₂ while making electricity</p>
+        </div>
+        
+        <div class="card">
+          <h3>Renewable</h3>
+          <p>Wind will never run out (unlike coal or petrol)</p>
+        </div>
+        
+        <div class="card">
+          <h3>Low running cost</h3>
+          <p>After building, wind is free!</p>
+        </div>
+        
+        <div class="card">
+          <h3>Creates jobs</h3>
+          <p>Many people work in making, installing & repairing turbines</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="bad">
+      <h2>Some Challenges</h2>
+      
+      <ul>
+        <li>Wind doesn't blow all the time → sometimes no electricity</li>
+        <li>Needs a lot of space (big fields or sea)</li>
+        <li>Some birds can get hurt (but new designs are better)</li>
+        <li>People living nearby sometimes say turbines are noisy or not beautiful</li>
+      </ul>
+      
+      <p>Scientists and engineers are working hard to solve these problems!</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Made with love for Class 7 Science Project • 2025–2026</p>
+    <p>Wind is free — let's use it wisely! 🌬️</p>
+  </footer>
+
+</body>
+</html>
