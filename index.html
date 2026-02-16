@@ -1,176 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wind Energy → Electricity | Class 7 Science</title>
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f8ff;
-      color: #333;
-      line-height: 1.6;
-    }
-    
-    header {
-      background: linear-gradient(90deg, #4facfe, #00f2fe);
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
-    
-    h1 {
-      margin: 0;
-      font-size: 2.8rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    }
-    
-    h2 {
-      color: #0066cc;
-      border-bottom: 3px solid #4facfe;
-      padding-bottom: 8px;
-      margin-top: 35px;
-    }
-    
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    .box {
-      background-color: white;
-      border-radius: 12px;
-      padding: 20px;
-      margin: 25px 0;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    .step {
-      background-color: #e6f7ff;
-      border-left: 8px solid #1890ff;
-      padding: 15px;
-      margin: 20px 0;
-      border-radius: 0 8px 8px 0;
-    }
-    
-    .important {
-      background-color: #fffbe6;
-      border-left: 6px solid #faad14;
-      padding: 15px;
-      margin: 20px 0;
-      border-radius: 6px;
-    }
-    
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin: 15px 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-    
-    .center {
-      text-align: center;
-    }
-    
-    footer {
-      background-color: #0066cc;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraWind | Sustainable Energy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="logo">Aura<span>Wind</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Environment</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
 
-<header>
-  <h1>Wind Energy to Electrical Energy</h1>
-  <p>Learn how wind becomes electricity – Class 7 Science Project</p>
-</header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Harnessing the Power of Nature</h1>
+            <p>Discover how wind energy is leading the global transition to a 100% renewable future.</p>
+            <a href="#about" class="btn">Explore More</a>
+        </div>
+    </section>
 
-<div class="container">
+    <section id="about" class="info-section">
+        <h2>Why Wind Energy?</h2>
+        <div class="card-container">
+            <div class="card">
+                <i class="fas fa-leaf"></i>
+                <h3>Eco-Friendly</h3>
+                <p>Zero emissions and minimal water consumption during power generation.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-infinity"></i>
+                <h3>Inexhaustible</h3>
+                <p>As long as the sun shines and the earth rotates, wind will exist.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Cost Effective</h3>
+                <p>One of the lowest-priced renewable energy sources available today.</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="box center">
-    <h2>What is Wind Energy?</h2>
-    <p>Wind is moving air.<br>
-    Fast moving air = lots of <strong>kinetic energy</strong></p>
-    
-    <img src="https://images.unsplash.com/photo-1509395596868-d7976b7b1e99?w=800" alt="strong wind blowing">
-  </div>
-
-  <div class="box">
-    <h2>How do we change wind energy into electricity?</h2>
-    
-    <div class="step">
-      <strong>Step 1</strong><br>
-      Wind pushes the <strong>blades</strong> of the windmill (rotor).
-    </div>
-    
-    <div class="step">
-      <strong>Step 2</strong><br>
-      Blades start <strong>rotating</strong> → shaft also rotates.
-    </div>
-    
-    <div class="step">
-      <strong>Step 3</strong><br>
-      Shaft is connected to a <strong>generator</strong> inside the nacelle.
-    </div>
-    
-    <div class="step">
-      <strong>Step 4</strong><br>
-      Generator changes <strong>mechanical energy</strong> → <strong>electrical energy</strong>.
-    </div>
-    
-    <div class="step">
-      <strong>Step 5</strong><br>
-      Electricity travels through wires → transformer → our homes!
-    </div>
-  </div>
-
-  <div class="box center">
-    <h2>Wind Turbine – Main Parts</h2>
-    <img src="https://images.unsplash.com/photo-1613665798973-6578180a7965?w=800" alt="labelled wind turbine parts">
-    <p style="font-size:0.95rem; color:#555;">
-      Main parts: Blades • Nacelle (generator inside) • Tower • Foundation
-    </p>
-  </div>
-
-  <div class="important">
-    <strong>Did you know?</strong><br>
-    → A single large wind turbine can give electricity to 300–600 houses!<br>
-    → Wind energy is <strong>clean energy</strong> → no smoke, no pollution<br>
-    → India is among the top 5 countries in wind power production
-  </div>
-
-  <div class="box">
-    <h2>Advantages of Wind Energy</h2>
-    <ul>
-      <li>Does not pollute air or water</li>
-      <li>Never finishes (renewable)</li>
-      <li>After making turbine – electricity is almost free</li>
-      <li>Good for villages far from cities</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h2>Disadvantages (Problems)</h2>
-    <ul>
-      <li>Works only when wind blows fast</li>
-      <li>Needs large open space</li>
-      <li>Birds sometimes get hurt</li>
-      <li>Makes some noise</li>
-    </ul>
-  </div>
-
-</div>
-
-<footer>
-  <p>Made for Class 7 Science Project • 2025-2026 • Renewable Energy Topic</p>
-</footer>
-
+    <script src="js/script.js"></script>
 </body>
 </html>
