@@ -1,36 +1,56 @@
-<main>
-    <section id="history" class="content-section reveal">
-        <div class="text-block">
-            <h2>The Legacy of the <span>Wind Wheel</span></h2>
-            <p>
-                Before the modern turbine, there was the <strong>Wind Wheel</strong>. Originating over 1,000 years ago, 
-                early wind wheels were vertical-axis machines used in Persia to grind grain and pump water. 
-                By the 12th century, the iconic horizontal-axis "Dutch Windmill" appeared in Europe, 
-                using massive canvas sails to harness the breeze.
-            </p>
-            <p>
-                Today, the "wheel" has evolved. While ancient windmills relied on <em>drag</em> (the wind pushing 
-                the blade), modern turbines use <strong>aerodynamic lift</strong>, allowing the blades to 
-                spin much faster than the wind itself, generating significantly more power.
-            </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroVantage | Wind Energy Future</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wind-bg">
+        <div class="glow-orb"></div>
+        <div class="wind-line line-1"></div>
+        <div class="wind-line line-2"></div>
+    </div>
+
+    <nav>
+        <div class="logo">AERO<span>VANTAGE</span></div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#history">Wind Wheels</a></li>
+            <li><a href="#science">How it Works</a></li>
+            <li><button class="cta-nav">Explore</button></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content reveal">
+            <h1>Harnessing the <br><span>Infinite Breeze.</span></h1>
+            <p>From ancient wind wheels to massive offshore turbines, we explore the journey of clean energy.</p>
+            <a href="#history" class="btn-main">Get Started</a>
         </div>
-        
+    </header>
+
+    <section id="history" class="section reveal">
+        <div class="glass-card">
+            <h2>The Legacy of the <span>Wind Wheel</span></h2>
+            <p>For centuries, the <strong>Wind Wheel</strong> was a symbol of human ingenuity. Unlike modern electricity-generating turbines, ancient windmills used mechanical power directly to grind grain or pump water. These "wheels" relied on simple drag forces to turn massive wooden gears.</p>
+            
+        </div>
     </section>
 
-    <section id="science" class="content-section reveal alternate">
-        <div class="text-block">
-            <h2>Harnessing <span>Kinetic Energy</span></h2>
-            <p>
-                Wind energy is a form of solar energy. The sun unevenly heats the atmosphere, creating 
-                pressure differences that result in wind. When this wind hits a turbine's blades, 
-                it converts <strong>kinetic energy</strong> into mechanical energy.
-            </p>
-            <ul>
-                <li><strong>The Rotor:</strong> Captures the wind and begins the rotation.</li>
-                <li><strong>The Gearbox:</strong> Speeds up the slow rotation of the blades to over 1,500 RPM.</li>
-                <li><strong>The Generator:</strong> Uses magnetic fields to turn that rotation into electricity.</li>
-            </ul>
+    <section id="science" class="section reveal">
+        <div class="glass-card alternate">
+            <h2>Modern <span>Wind Physics</span></h2>
+            <p>Today, wind energy is a form of solar energy. The uneven heating of the atmosphere creates wind, which turns turbine blades around a rotor. This rotor is connected to a main shaft, which spins a generator to create electricity.</p>
+            
+            <div class="stats">
+                <div class="stat-item"><strong>59.3%</strong><br>Betz Limit</div>
+                <div class="stat-item"><strong>15 MW</strong><br>Max Capacity</div>
+            </div>
         </div>
-        
     </section>
-</main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
