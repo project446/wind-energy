@@ -1,37 +1,33 @@
-// 1. Scroll Reveal Logic using Intersection Observer
-const observerOptions = {
-    threshold: 0.15
-};
+// 1. Mouse Tracking Parallax Background
+const blobs = document.querySelectorAll('.blob');
 
+window.addEventListener('mousemove', (e) => {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+
+    blobs.forEach((blob, index) => {
+        const speed = (index + 1) * 30; 
+        const translateX = (x - 0.5) * speed;
+        const translateY = (y - 0.5) * speed;
+        blob.style.transform = `translate(${translateX}px, ${translateY}px)`;
+    });
+});
+
+// 2. Smooth Reveal on Scroll
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
         }
     });
-}, observerOptions);
+}, { threshold: 0.1 });
 
-// Target all elements with the 'reveal' class
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// 2. Button Interaction
-const mainBtn = document.getElementById('mainBtn');
-mainBtn.addEventListener('click', () => {
-    mainBtn.textContent = "Loading...";
-    mainBtn.style.opacity = "0.7";
-    
-    setTimeout(() => {
-        alert("Welcome! The interactive journey begins.");
-        mainBtn.textContent = "Get Started";
-        mainBtn.style.opacity = "1";
-    }, 600);
-});
-
-// 3. Simple Nav Highlight
-const navLinks = document.querySelectorAll('.nav-links a');
-navLinks.forEach(link => {
+// 3. Navigation Click Highlight
+document.querySelectorAll('.nav-item').forEach(link => {
     link.addEventListener('click', function() {
-        navLinks.forEach(l => l.classList.remove('active'));
+        document.querySelector('.nav-item.active').classList.remove('active');
         this.classList.add('active');
     });
 });

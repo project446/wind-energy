@@ -3,37 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Navy Design</title>
+    <title>Interactive Experience</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
 
     <nav>
         <div class="logo">GEMINI<span>.IO</span></div>
         <ul class="nav-links">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" class="nav-item active">Home</a></li>
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#services" class="nav-item">Services</a></li>
+            <li><button id="cta-nav">Join Now</button></li>
         </ul>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content reveal">
-            <h1>Build <span>Better</span> Digital Ideas.</h1>
-            <p>Experience the next level of interactive web design with smooth transitions and clean aesthetics.</p>
-            <br>
-            <button id="mainBtn">Get Started</button>
-        </div>
-        <div class="hero-image reveal">
-            <img src="https://via.placeholder.com/500x400/1e293b/10b981?text=Interactive+Design" alt="Hero Image">
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-content reveal">
+                <h1>Build <span>Better</span> Digital Ideas.</h1>
+                <p>Move your mouse to see the background react. Scroll to reveal the magic.</p>
+                <div class="hero-btns">
+                    <button class="primary-btn">Get Started</button>
+                    <button class="secondary-btn">Watch Demo</button>
+                </div>
+            </div>
+            <div class="hero-image reveal">
+                <div class="glass-card">
+                    <img src="https://via.placeholder.com/500x400/10b981/ffffff?text=Interactive+UI" alt="Hero">
+                </div>
+            </div>
+        </section>
 
-    <section id="about" class="info-section reveal">
-        <h2>Why Interaction Matters</h2>
-        <p>Subtle animations guide the user's eye and make the experience feel premium.</p>
-    </section>
+        <section id="about" class="info-section reveal">
+            <h2>Dynamic Experiences</h2>
+            <p>We combine deep navy aesthetics with emerald energy.</p>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
