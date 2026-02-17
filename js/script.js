@@ -1,15 +1,13 @@
-// 1. Cursor Glow Tracking
+// 1. Interactive Mouse Glow
 const glow = document.getElementById('glow');
-
 window.addEventListener('mousemove', (e) => {
-    // Moves the green glow to follow your mouse
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+    glow.style.background = `radial-gradient(circle at ${x}% ${y}%, #1e3a8a 0%, #0f172a 60%)`;
 });
 
-// 2. Scroll Reveal Logic
-const observerOptions = { threshold: 0.2 };
-
+// 2. Scroll Reveal Observer
+const observerOptions = { threshold: 0.1 };
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -20,7 +18,12 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// 3. Button Interaction
-document.querySelector('.primary-btn').addEventListener('click', () => {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+// 3. Smooth Scrolling for Nav Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });

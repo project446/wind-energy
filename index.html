@@ -3,40 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Deep Navy</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AeroVantage | Sustainable Wind Energy</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <div class="bg-layer">
-        <div class="cursor-glow" id="glow"></div>
-        <div class="mesh-gradient"></div>
-    </div>
+    <div class="bg-glow" id="glow"></div>
 
     <nav>
-        <div class="logo">GEMINI<span>.IO</span></div>
+        <div class="logo">AERO<span>VANTAGE</span></div>
         <ul class="nav-links">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><button class="btn-nav">Contact</button></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
     </nav>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content reveal">
-                <h1>Crafting <span>Immersive</span><br>Digital Worlds.</h1>
-                <p>Move your mouse around to see the background follow you. Scroll down to see elements fade in.</p>
-                <button class="primary-btn">Explore Now</button>
+    <header class="hero">
+        <div class="hero-text reveal">
+            <h1>Harnessing the <br><span>Power of Nature.</span></h1>
+            <p>Transitioning the world to clean, infinite energy through advanced wind turbine technology.</p>
+            <div class="cta-group">
+                <button class="btn-primary">Explore Tech</button>
+                <button class="btn-secondary">View Impact</button>
             </div>
-        </section>
+        </div>
+        <div class="hero-image reveal">
+            <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=800" alt="Wind Turbine">
+        </div>
+    </header>
 
-        <section id="about" class="info-section reveal">
-            <h2>The Power of Interaction</h2>
-            <p>Modern web design is about motion and responsiveness.</p>
-        </section>
-    </main>
+    <section id="technology" class="info-grid">
+        <div class="card reveal">
+            <h3>Offshore Wind</h3>
+            <p>Harnessing powerful sea breezes to generate massive gigawatts of power.</p>
+        </div>
+        <div class="card reveal">
+            <h3>Onshore Solutions</h3>
+            <p>Integrating seamlessly with local landscapes to provide community energy.</p>
+        </div>
+        <div class="card reveal">
+            <h3>Smart Turbines</h3>
+            <p>AI-driven sensors that adjust blade pitch for maximum efficiency.</p>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,75 +1,90 @@
-/* General Reset */
-* {
-    margin: 0; padding: 0; box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, sans-serif;
+/* Variables */
+:root {
+    --bg-dark: #0f172a;
+    --accent-green: #10b981;
+    --accent-blue: #3b82f6;
+    --text-white: #f8fafc;
+    --glass: rgba(255, 255, 255, 0.05);
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 
 body {
-    background-color: #020617; /* Deep Navy Base */
-    color: #f8fafc;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
     overflow-x: hidden;
-    line-height: 1.6;
 }
 
-/* --- THE BACKGROUND (The "Interaction" Zone) --- */
-.bg-layer {
+/* Dynamic Glow Background */
+.bg-glow {
     position: fixed;
     top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    z-index: -1; /* Keep it behind everything */
-    background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
-    overflow: hidden;
-}
-
-.cursor-glow {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none; /* Crucial: clicks go through this */
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease-out;
-}
-
-.mesh-gradient {
-    position: absolute;
     width: 100%; height: 100%;
-    opacity: 0.3;
-    background-image: 
-        radial-gradient(at 0% 0%, hsla(161, 84%, 39%, 0.3) 0, transparent 50%), 
-        radial-gradient(at 100% 100%, hsla(217, 91%, 60%, 0.3) 0, transparent 50%);
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    z-index: -1;
 }
 
-/* --- Content Styling --- */
+/* Navigation */
 nav {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 25px 10%;
-    background: rgba(2, 6, 23, 0.8);
-    backdrop-filter: blur(12px);
-    position: sticky; top: 0; z-index: 100;
+    padding: 30px 8%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky; top: 0; z-index: 1000;
 }
 
-.logo { font-size: 1.5rem; font-weight: bold; }
-.logo span { color: #10b981; }
+.logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 2px; }
+.logo span { color: var(--accent-green); }
 
+.nav-links { display: flex; list-style: none; gap: 40px; }
+.nav-links a { text-decoration: none; color: white; transition: 0.3s; font-weight: 500; }
+.nav-links a:hover, .active { color: var(--accent-green); }
+
+/* Hero Section */
 .hero {
-    display: flex; align-items: center; min-height: 90vh; padding: 0 10%;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 80px 8%; min-height: 85vh;
 }
 
-.hero-content h1 { font-size: 4rem; margin-bottom: 20px; }
-.hero-content span { color: #10b981; }
+.hero-text h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 25px; }
+.hero-text span { color: var(--accent-blue); }
+.hero-text p { max-width: 500px; opacity: 0.8; margin-bottom: 30px; }
 
-button {
-    padding: 12px 30px; border-radius: 8px; border: none;
-    cursor: pointer; transition: 0.3s; font-weight: bold;
+.hero-image img {
+    width: 100%; max-width: 600px; border-radius: 30px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: float 6s ease-in-out infinite;
 }
 
-.primary-btn { background: #10b981; color: white; }
-.primary-btn:hover { transform: scale(1.05); background: #059669; }
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
 
-/* Reveal Classes for JS */
-.reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
+/* Buttons */
+.btn-primary {
+    padding: 15px 35px; background: var(--accent-green);
+    border: none; border-radius: 50px; color: white; cursor: pointer;
+    font-weight: bold; margin-right: 15px; transition: 0.3s;
+}
+
+.btn-primary:hover { background: #059669; transform: translateY(-3px); }
+
+/* Cards */
+.info-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; padding: 100px 8%;
+}
+
+.card {
+    background: var(--glass);
+    padding: 40px; border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.4s;
+}
+
+.card:hover { border-color: var(--accent-green); transform: translateY(-10px); }
+
+/* Reveal Animations */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
-
-.info-section { padding: 100px 10%; text-align: center; min-height: 50vh; }
