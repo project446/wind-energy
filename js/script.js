@@ -1,19 +1,4 @@
-// 1. Mouse Tracking Parallax Background
-const blobs = document.querySelectorAll('.blob');
-
-window.addEventListener('mousemove', (e) => {
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-
-    blobs.forEach((blob, index) => {
-        const speed = (index + 1) * 30; 
-        const translateX = (x - 0.5) * speed;
-        const translateY = (y - 0.5) * speed;
-        blob.style.transform = `translate(${translateX}px, ${translateY}px)`;
-    });
-});
-
-// 2. Smooth Reveal on Scroll
+// 1. Scroll Reveal Logic
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -24,10 +9,21 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// 3. Navigation Click Highlight
-document.querySelectorAll('.nav-item').forEach(link => {
-    link.addEventListener('click', function() {
-        document.querySelector('.nav-item.active').classList.remove('active');
-        this.classList.add('active');
-    });
+// 2. Background Parallax (Reacts to Scroll)
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const s1 = document.querySelector('.s1');
+    const s2 = document.querySelector('.s2');
+    
+    // Move spheres slightly based on scroll
+    s1.style.transform = `translateY(${scrollY * 0.2}px)`;
+    s2.style.transform = `translateY(${scrollY * -0.1}px)`;
+});
+
+// 3. Button Click Effect
+document.getElementById('mainBtn').addEventListener('mousedown', function() {
+    this.style.transform = "scale(0.9)";
+});
+document.getElementById('mainBtn').addEventListener('mouseup', function() {
+    this.style.transform = "scale(1.05)";
 });

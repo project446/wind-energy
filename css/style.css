@@ -1,58 +1,77 @@
-/* --- Background Animation Setup --- */
+/* General Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
 body {
-    background-color: #020617; /* Even deeper navy */
+    background-color: #020617; /* Dark Base */
+    color: #f8fafc;
     overflow-x: hidden;
-    position: relative;
+    min-height: 100vh;
 }
 
-.bg-blobs {
+/* --- THE DYNAMIC BACKGROUND --- */
+.bg-container {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     z-index: -1;
-    filter: blur(80px);
-    opacity: 0.6;
+    overflow: hidden;
+    filter: blur(100px); /* This blends the colors together */
 }
 
-.blob {
+.gradient-sphere {
     position: absolute;
     border-radius: 50%;
-    background: #10b981;
-    transition: transform 0.2s ease-out;
+    opacity: 0.5;
+    animation: move 20s infinite alternate;
 }
 
-.blob-1 { width: 400px; height: 400px; top: -100px; right: -100px; opacity: 0.4; }
-.blob-2 { width: 300px; height: 300px; bottom: -50px; left: -50px; background: #3b82f6; opacity: 0.3; }
-.blob-3 { width: 250px; height: 250px; top: 40%; left: 30%; background: #8b5cf6; opacity: 0.2; }
-
-/* --- Interactive Card (Glassmorphism) --- */
-.glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 10px;
-    transition: transform 0.3s ease;
+.s1 {
+    width: 50vw; height: 50vw;
+    background: #10b981; /* Emerald */
+    top: -10%; left: -10%;
 }
 
-.glass-card:hover {
-    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
-    border-color: #10b981;
+.s2 {
+    width: 40vw; height: 40vw;
+    background: #3b82f6; /* Blue */
+    bottom: -10%; right: -10%;
+    animation-duration: 25s;
 }
 
-/* --- Buttons --- */
-.hero-btns { display: flex; gap: 15px; margin-top: 25px; }
-
-.secondary-btn {
-    background: transparent;
-    border: 2px solid #10b981;
-    color: #10b981;
+.s3 {
+    width: 30vw; height: 30vw;
+    background: #8b5cf6; /* Purple */
+    top: 40%; left: 30%;
+    animation-duration: 15s;
 }
 
-.secondary-btn:hover {
-    background: rgba(16, 185, 129, 0.1);
+@keyframes move {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(200px, 100px) scale(1.2); }
 }
 
-/* Re-include your previous 'reveal' and 'active' CSS classes here */
+/* --- Interactive Elements --- */
+nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 10%;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(15px); /* Glass effect */
+    position: sticky; top: 0; z-index: 100;
+}
+
+.hero {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 100px 10%;
+    min-height: 90vh;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
