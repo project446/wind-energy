@@ -1,29 +1,12 @@
-// 1. Interactive Mouse Glow
-const glow = document.getElementById('glow');
-window.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth) * 100;
-    const y = (e.clientY / window.innerHeight) * 100;
-    glow.style.background = `radial-gradient(circle at ${x}% ${y}%, #1e3a8a 0%, #0f172a 60%)`;
-});
+// Function to calculate Power: P = 0.5 * rho * A * v^3 * Cp
+function calculateWindPower(speed) {
+    const rho = 1.225; // Air density at sea level
+    const area = 8000; // Swept area of a large turbine
+    const cp = 0.45;   // Efficiency
+    
+    // Power increases by the CUBE of wind speed (v^3)
+    let power = 0.5 * rho * area * Math.pow(speed, 3) * cp;
+    return (power / 1000000).toFixed(2); // Convert to Megawatts
+}
 
-// 2. Scroll Reveal Observer
-const observerOptions = { threshold: 0.1 };
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// 3. Smooth Scrolling for Nav Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+console.log("At 12m/s, turbine produces: " + calculateWindPower(12) + " MW");
