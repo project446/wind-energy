@@ -1,25 +1,37 @@
-// Wait for DOM to load
-document.addEventListener('DOMContentLoaded', () => {
-    const exploreBtn = document.getElementById('exploreBtn');
+// 1. Scroll Reveal Logic using Intersection Observer
+const observerOptions = {
+    threshold: 0.15
+};
 
-    // Click Event
-    exploreBtn.addEventListener('click', () => {
-        alert("Redirecting to our Technology Section... Get ready to be blown away!");
-        window.scrollTo({
-            top: 800,
-            behavior: 'smooth'
-        });
-    });
-
-    // Simple Scroll Animation for Navigation
-    window.addEventListener('scroll', () => {
-        const nav = document.querySelector('nav');
-        if (window.scrollY > 50) {
-            nav.style.padding = '10px 10%';
-            nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
-        } else {
-            nav.style.padding = '20px 10%';
-            nav.style.boxShadow = 'none';
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
         }
+    });
+}, observerOptions);
+
+// Target all elements with the 'reveal' class
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// 2. Button Interaction
+const mainBtn = document.getElementById('mainBtn');
+mainBtn.addEventListener('click', () => {
+    mainBtn.textContent = "Loading...";
+    mainBtn.style.opacity = "0.7";
+    
+    setTimeout(() => {
+        alert("Welcome! The interactive journey begins.");
+        mainBtn.textContent = "Get Started";
+        mainBtn.style.opacity = "1";
+    }, 600);
+});
+
+// 3. Simple Nav Highlight
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
     });
 });
