@@ -1,29 +1,26 @@
-// 1. Scroll Reveal Logic
+// 1. Cursor Glow Tracking
+const glow = document.getElementById('glow');
+
+window.addEventListener('mousemove', (e) => {
+    // Moves the green glow to follow your mouse
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+});
+
+// 2. Scroll Reveal Logic
+const observerOptions = { threshold: 0.2 };
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
         }
     });
-}, { threshold: 0.1 });
+}, observerOptions);
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// 2. Background Parallax (Reacts to Scroll)
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const s1 = document.querySelector('.s1');
-    const s2 = document.querySelector('.s2');
-    
-    // Move spheres slightly based on scroll
-    s1.style.transform = `translateY(${scrollY * 0.2}px)`;
-    s2.style.transform = `translateY(${scrollY * -0.1}px)`;
-});
-
-// 3. Button Click Effect
-document.getElementById('mainBtn').addEventListener('mousedown', function() {
-    this.style.transform = "scale(0.9)";
-});
-document.getElementById('mainBtn').addEventListener('mouseup', function() {
-    this.style.transform = "scale(1.05)";
+// 3. Button Interaction
+document.querySelector('.primary-btn').addEventListener('click', () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 });

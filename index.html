@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Navy Design</title>
+    <title>Interactive Deep Navy</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bg-container">
-        <div class="gradient-sphere s1"></div>
-        <div class="gradient-sphere s2"></div>
-        <div class="gradient-sphere s3"></div>
+
+    <div class="bg-layer">
+        <div class="cursor-glow" id="glow"></div>
+        <div class="mesh-gradient"></div>
     </div>
 
     <nav>
@@ -18,19 +18,24 @@
         <ul class="nav-links">
             <li><a href="#" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><button id="mainBtn">Get Started</button></li>
+            <li><button class="btn-nav">Contact</button></li>
         </ul>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content reveal">
-            <h1>Build <span>Better</span> Digital Ideas.</h1>
-            <p>A living, breathing interface designed for the future.</p>
-        </div>
-        <div class="hero-image reveal">
-            <img src="https://via.placeholder.com/500x400/10b981/ffffff?text=Interactive+UI" alt="Hero">
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-content reveal">
+                <h1>Crafting <span>Immersive</span><br>Digital Worlds.</h1>
+                <p>Move your mouse around to see the background follow you. Scroll down to see elements fade in.</p>
+                <button class="primary-btn">Explore Now</button>
+            </div>
+        </section>
+
+        <section id="about" class="info-section reveal">
+            <h2>The Power of Interaction</h2>
+            <p>Modern web design is about motion and responsiveness.</p>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>

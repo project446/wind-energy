@@ -1,77 +1,75 @@
 /* General Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
 
 body {
-    background-color: #020617; /* Dark Base */
+    background-color: #020617; /* Deep Navy Base */
     color: #f8fafc;
     overflow-x: hidden;
-    min-height: 100vh;
+    line-height: 1.6;
 }
 
-/* --- THE DYNAMIC BACKGROUND --- */
-.bg-container {
+/* --- THE BACKGROUND (The "Interaction" Zone) --- */
+.bg-layer {
     position: fixed;
     top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -1;
+    width: 100vw; height: 100vh;
+    z-index: -1; /* Keep it behind everything */
+    background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
     overflow: hidden;
-    filter: blur(100px); /* This blends the colors together */
 }
 
-.gradient-sphere {
+.cursor-glow {
     position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
     border-radius: 50%;
-    opacity: 0.5;
-    animation: move 20s infinite alternate;
+    pointer-events: none; /* Crucial: clicks go through this */
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
 }
 
-.s1 {
-    width: 50vw; height: 50vw;
-    background: #10b981; /* Emerald */
-    top: -10%; left: -10%;
+.mesh-gradient {
+    position: absolute;
+    width: 100%; height: 100%;
+    opacity: 0.3;
+    background-image: 
+        radial-gradient(at 0% 0%, hsla(161, 84%, 39%, 0.3) 0, transparent 50%), 
+        radial-gradient(at 100% 100%, hsla(217, 91%, 60%, 0.3) 0, transparent 50%);
 }
 
-.s2 {
-    width: 40vw; height: 40vw;
-    background: #3b82f6; /* Blue */
-    bottom: -10%; right: -10%;
-    animation-duration: 25s;
-}
-
-.s3 {
-    width: 30vw; height: 30vw;
-    background: #8b5cf6; /* Purple */
-    top: 40%; left: 30%;
-    animation-duration: 15s;
-}
-
-@keyframes move {
-    from { transform: translate(0, 0) scale(1); }
-    to { transform: translate(200px, 100px) scale(1.2); }
-}
-
-/* --- Interactive Elements --- */
+/* --- Content Styling --- */
 nav {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 10%;
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(15px); /* Glass effect */
+    padding: 25px 10%;
+    background: rgba(2, 6, 23, 0.8);
+    backdrop-filter: blur(12px);
     position: sticky; top: 0; z-index: 100;
 }
 
+.logo { font-size: 1.5rem; font-weight: bold; }
+.logo span { color: #10b981; }
+
 .hero {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 100px 10%;
-    min-height: 90vh;
+    display: flex; align-items: center; min-height: 90vh; padding: 0 10%;
 }
 
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease-out;
+.hero-content h1 { font-size: 4rem; margin-bottom: 20px; }
+.hero-content span { color: #10b981; }
+
+button {
+    padding: 12px 30px; border-radius: 8px; border: none;
+    cursor: pointer; transition: 0.3s; font-weight: bold;
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+.primary-btn { background: #10b981; color: white; }
+.primary-btn:hover { transform: scale(1.05); background: #059669; }
+
+/* Reveal Classes for JS */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+.info-section { padding: 100px 10%; text-align: center; min-height: 50vh; }
