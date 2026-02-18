@@ -42,12 +42,3 @@ body {
 
 h1 { color: #4CAF50; }
 p { line-height: 1.6; margin-bottom: 20px; }
-body {
-    /* Replace the image link with a clean 'Eco Green' color */
-    background-color: #1a2e1a; 
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
