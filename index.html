@@ -3,49 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WindPower | The Future of Energy</title>
+    <title>Wind Energy Portal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Harnessing the Wind</h1>
-            <p>Sustainable energy for a cleaner tomorrow.</p>
-            <a href="#about" class="btn">Learn More</a>
-        </div>
-    </header>
+    <div class="hero-section">
+        <div class="overlay">
+            <nav>
+                <h2>EcoFlow</h2>
+            </nav>
 
-    <section id="about" class="container">
-        <h2>About Wind Energy</h2>
-        <p>Wind energy is the process by which the wind is used to generate mechanical power or electricity. Wind turbines convert the kinetic energy in the wind into mechanical power.</p>
-        
-        
+            <div class="content">
+                <h1>Harnessing the Wind</h1>
+                <p>Wind energy is one of the cleanest and most sustainable ways to power our world. By using large turbines, we capture the kinetic energy of air in motion and turn it into electricity.</p>
+                
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=1000" alt="Windmill at sunset" id="windmill-img">
+                </div>
 
-[Image of a diagram showing how a wind turbine works]
-
-
-        <div class="features">
-            <div class="card">
-                <h3>Renewable</h3>
-                <p>The wind will never run out, unlike fossil fuels.</p>
-            </div>
-            <div class="card">
-                <h3>Clean</h3>
-                <p>No air or water pollution is produced during generation.</p>
+                <div class="info-card">
+                    <h3>How Windmills Work</h3>
+                    <p>When the wind blows past a turbine's blades, it creates lift—much like an airplane wing. This causes the blades to rotate, turning a shaft connected to a generator that creates electrons.</p>
+                    <button id="energyBtn">Check Energy Output</button>
+                    <p id="statusTextText"></p>
+                </div>
             </div>
         </div>
-    </section>
-
-    <section class="calculator-section">
-        <div class="container">
-            <h2>Quick Energy Check</h2>
-            <p>Enter the wind speed to see potential power output:</p>
-            <input type="number" id="speedInput" placeholder="Wind speed in mph...">
-            <button onclick="calculatePower()">Calculate</button>
-            <p id="result"></p>
-        </div>
-    </section>
+    </div>
 
     <script src="script.js"></script>
 </body>
