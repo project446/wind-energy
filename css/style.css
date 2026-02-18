@@ -1,6 +1,19 @@
 body {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1920');
+    /* BACKGROUND: If this URL is broken or you are offline, it will be white */
+    background: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1920') no-repeat center center fixed;
     background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-text{color: red}
+
+/* THE ANIMATION: This must exist for the JS to trigger it */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.running {
+    animation: spin 1s linear infinite;
+}
