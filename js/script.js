@@ -14,3 +14,5 @@ btn.addEventListener('click', function() {
         msg.textContent = "⏸️ Turbine Stopped.";
     }
 });
+
+<image>download.jfif</image>
