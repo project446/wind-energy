@@ -15,4 +15,3 @@ btn.addEventListener('click', function() {
     }
 });
 
-<image>download.jfif</image>
