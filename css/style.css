@@ -1,55 +1,59 @@
-/* General Reset */
-* {
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #064e3b; /* Deep dark green background */
+    background-color: #020617; /* Dark fallback color */
     color: white;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: sans-serif;
     overflow-x: hidden;
-    line-height: 1.6;
 }
 
-/* The Glow Orb */
+/* 1. THE HERO BACKGROUND */
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    /* Replace URL with your local image if needed: url('background.jpg') */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                      url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 2. THE FOREGROUND IMAGE */
+.image-grid {
+    padding: 100px 50px;
+    display: flex;
+    justify-content: center;
+    background: #020617;
+}
+
+.wind-img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+/* 3. GLOW ORB (Must be visible over dark background) */
 .glow-orb {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.4), transparent 70%);
     border-radius: 50%;
     pointer-events: none;
-    z-index: 1; /* Keeps it above background but below text if needed */
-    will-change: transform;
+    z-index: 10; /* Put it on top to see it working */
+    transform: translate(-50%, -50%);
 }
 
-/* Content Styling */
-main {
-    position: relative;
-    z-index: 2; /* Ensures text is readable above the glow */
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.image-container img {
-    width: 80%;
-    max-width: 800px;
-    border-radius: 20px;
-    margin-top: 50px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-/* Scroll Reveal Initial State */
+/* SCROLL REVEAL STATES */
 .reveal {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease-out;
+    transform: translateY(30px);
+    transition: 1.2s ease-out;
 }
-
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
