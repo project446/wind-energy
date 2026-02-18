@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wind Energy Project</title>
+    <title>Wind Energy Education</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="main-card">
-        <h1>Wind Energy</h1>
-        <p>Wind energy is one of the most sustainable ways to generate electricity. By capturing the natural power of the atmosphere, we can power entire cities without carbon emissions.</p>
+    <div class="content-box">
+        <h1>Wind Energy & Turbines</h1>
+        
+        <p>Wind energy is a form of solar energy. It is caused by the uneven heating of the atmosphere by the sun. Windmills, or <strong>wind turbines</strong>, harness this power to create electricity without any pollution.</p>
 
-        <div class="windmill-container">
-            <img src="https://cdn-icons-png.flaticon.com/512/933/933157.png" id="windmillImg" alt="Windmill">
+        <div class="visual-area">
+            <img src="https://cdn-icons-png.flaticon.com/512/933/933157.png" id="windmill" alt="Windmill Icon">
         </div>
 
-        <h3>How it Works</h3>
-        <p>The wind turns the turbine blades around a rotor, which spins a generator, creating electricity.</p>
+        <h3>How do Windmills work?</h3>
+        <p>When wind blows past the blades, it creates a force called <em>lift</em>. This turns the rotor, which is connected to a generator. Inside the generator, magnets spin to create the electricity that powers our homes.</p>
 
-        <button id="actionBtn">Activate Turbine</button>
-        <div id="statusReport"></div>
+        <button id="toggleBtn">Activate Turbine</button>
+        <p id="statusMsg"></p>
     </div>
 
     <script src="script.js"></script>

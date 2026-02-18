@@ -1,17 +1,16 @@
-// Wait for the button to be clicked
-document.getElementById('actionBtn').addEventListener('click', function() {
-    const windmill = document.getElementById('windmillImg');
-    const report = document.getElementById('statusReport');
-    
-    // Toggle the "spinning" class from the CSS
-    windmill.classList.toggle('spinning');
-    
-    // Update the text
-    if (windmill.classList.contains('spinning')) {
-        this.textContent = "Stop Turbine";
-        report.innerHTML = "🌬️ Status: Active <br> Generating Clean Power...";
+const btn = document.getElementById('toggleBtn');
+const turbine = document.getElementById('windmill');
+const msg = document.getElementById('statusMsg');
+
+btn.addEventListener('click', function() {
+    // This adds the "spinning-now" class from your CSS
+    turbine.classList.toggle('spinning-now');
+
+    if (turbine.classList.contains('spinning-now')) {
+        btn.textContent = "Stop Turbine";
+        msg.textContent = "🌬️ Turbine Active: Generating Electricity!";
     } else {
-        this.textContent = "Activate Turbine";
-        report.innerHTML = "⏸️ Status: Standby";
+        btn.textContent = "Activate Turbine";
+        msg.textContent = "⏸️ Turbine Stopped.";
     }
 });
