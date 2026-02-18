@@ -1,27 +1,24 @@
-// 1. Check if the file is even connected
-console.log("Wind Energy Script Loaded Successfully!");
-
-// 2. Interactive Mouse Glow (The Background Fix)
+// 1. Mouse Follower Logic
 const orb = document.querySelector('.glow-orb');
 
-// If the orb exists, move it. If not, alert the user.
-if (orb) {
-    window.addEventListener('mousemove', (e) => {
-        orb.style.left = e.clientX + "px";
-        orb.style.top = e.clientY + "px";
-    });
-} else {
-    console.error("Error: Could not find element with class '.glow-orb'. Check your HTML!");
-}
+window.addEventListener('mousemove', (e) => {
+    // We move the orb using transform for better performance
+    // Subtracting 300px because the orb width is 600px (half = 300)
+    const x = e.clientX - 300;
+    const y = e.clientY - 300;
+    
+    orb.style.transform = `translate(${x}px, ${y}px)`;
+});
 
-// 3. Scroll Reveal Logic
+// 2. Scroll Reveal Logic
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            console.log("Section revealed!");
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.2 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+console.log("Wind Energy Site Ready!");

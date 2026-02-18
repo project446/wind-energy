@@ -1,9 +1,56 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #064e3b; /* Deep dark green background */
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* The Glow Orb */
 .glow-orb {
-    position: fixed; /* NOT absolute */
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.2), transparent 70%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
     border-radius: 50%;
-    pointer-events: none; /* This allows you to click buttons through the glow */
-    z-index: -1; /* Keeps it behind the text */
+    pointer-events: none;
+    z-index: 1; /* Keeps it above background but below text if needed */
+    will-change: transform;
+}
+
+/* Content Styling */
+main {
+    position: relative;
+    z-index: 2; /* Ensures text is readable above the glow */
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.image-container img {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 20px;
+    margin-top: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Scroll Reveal Initial State */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
