@@ -3,32 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wind Energy Portal</title>
+    <title>Wind Energy Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="hero-section">
-        <div class="overlay">
-            <nav>
-                <h2>EcoFlow</h2>
-            </nav>
+    <div class="container">
+        <h1>Wind Energy</h1>
+        <p>Wind energy is a clean, renewable resource. It creates electricity without burning fuel or polluting the air.</p>
 
-            <div class="content">
-                <h1>Harnessing the Wind</h1>
-                <p>Wind energy is one of the cleanest and most sustainable ways to power our world. By using large turbines, we capture the kinetic energy of air in motion and turn it into electricity.</p>
-                
-                <div class="image-container">
-                    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=1000" alt="Windmill at sunset" id="windmill-img">
-                </div>
+        <div class="windmill-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/933/933157.png" id="turbine" class="windmill-image" alt="Windmill Icon">
+        </div>
 
-                <div class="info-card">
-                    <h3>How Windmills Work</h3>
-                    <p>When the wind blows past a turbine's blades, it creates lift—much like an airplane wing. This causes the blades to rotate, turning a shaft connected to a generator that creates electrons.</p>
-                    <button id="energyBtn">Check Energy Output</button>
-                    <p id="statusTextText"></p>
-                </div>
-            </div>
+        <h3>The Power of Windmills</h3>
+        <p>A windmill turns wind into electricity. The wind turns the blades, which spins a generator inside the box.</p>
+
+        <button class="btn" onclick="startTurbine()">Activate Turbine</button>
+
+        <div id="data-screen">
+            <span id="speedDisplay"></span><br>
+            <span id="powerDisplay"></span>
         </div>
     </div>
 
