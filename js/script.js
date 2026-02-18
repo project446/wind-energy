@@ -1,21 +1,17 @@
-function startTurbine() {
-    const turbine = document.getElementById('turbine');
-    const screen = document.getElementById('data-screen');
-    const speedText = document.getElementById('speedDisplay');
-    const powerText = document.getElementById('powerDisplay');
-
-    // Start spinning
-    turbine.classList.add('spinning');
-    screen.style.display = 'block';
-
-    // Logic: Speed affects electricity output
-    let windSpeed = Math.floor(Math.random() * 40) + 10;
-    let homes = windSpeed * 25;
-
-    speedText.innerHTML = "🌬️ Wind Speed: <b>" + windSpeed + " km/h</b>";
-    powerText.innerHTML = "🏠 Powering: <b>" + homes + " Homes</b>";
+// Wait for the button to be clicked
+document.getElementById('actionBtn').addEventListener('click', function() {
+    const windmill = document.getElementById('windmillImg');
+    const report = document.getElementById('statusReport');
     
-    // Make the turbine spin faster for higher wind speeds
-    let duration = 40 / windSpeed; 
-    turbine.style.animationDuration = duration + "s";
-}
+    // Toggle the "spinning" class from the CSS
+    windmill.classList.toggle('spinning');
+    
+    // Update the text
+    if (windmill.classList.contains('spinning')) {
+        this.textContent = "Stop Turbine";
+        report.innerHTML = "🌬️ Status: Active <br> Generating Clean Power...";
+    } else {
+        this.textContent = "Activate Turbine";
+        report.innerHTML = "⏸️ Status: Standby";
+    }
+});

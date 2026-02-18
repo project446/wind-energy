@@ -8,23 +8,19 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="main-card">
         <h1>Wind Energy</h1>
-        <p>Wind energy is a clean, renewable resource. It creates electricity without burning fuel or polluting the air.</p>
+        <p>Wind energy is one of the most sustainable ways to generate electricity. By capturing the natural power of the atmosphere, we can power entire cities without carbon emissions.</p>
 
-        <div class="windmill-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/933/933157.png" id="turbine" class="windmill-image" alt="Windmill Icon">
+        <div class="windmill-container">
+            <img src="https://cdn-icons-png.flaticon.com/512/933/933157.png" id="windmillImg" alt="Windmill">
         </div>
 
-        <h3>The Power of Windmills</h3>
-        <p>A windmill turns wind into electricity. The wind turns the blades, which spins a generator inside the box.</p>
+        <h3>How it Works</h3>
+        <p>The wind turns the turbine blades around a rotor, which spins a generator, creating electricity.</p>
 
-        <button class="btn" onclick="startTurbine()">Activate Turbine</button>
-
-        <div id="data-screen">
-            <span id="speedDisplay"></span><br>
-            <span id="powerDisplay"></span>
-        </div>
+        <button id="actionBtn">Activate Turbine</button>
+        <div id="statusReport"></div>
     </div>
 
     <script src="script.js"></script>
