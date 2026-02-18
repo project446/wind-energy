@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
+    }
 
 .container {
     background: rgba(71, 59, 173, 0.1);
@@ -24,7 +24,7 @@ body {
     text-align: center;
     border: 1px solid rgba(255,255,255,0.2);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
+    }
 
 /* THE ANIMATION */
 .windmill-icon {
@@ -32,12 +32,12 @@ body {
     margin: 20px 0;
     /* This connects to the @keyframes below */
     animation: spin-windmill 3s linear infinite;
-}
+    }
 
 @keyframes spin-windmill {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
-}
+    }
 
 h1 { color: #4CAF50; }
 p { line-height: 1.6; margin-bottom: 20px; }
