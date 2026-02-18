@@ -1,16 +1,52 @@
-<div class="glow-orb"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WindPower | The Future of Energy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<header class="hero-section">
-    <div class="hero-content reveal">
-        <h1>Wind Power</h1>
-        <p>Sustainable energy for the next generation.</p>
-    </div>
-</header>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Harnessing the Wind</h1>
+            <p>Sustainable energy for a cleaner tomorrow.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </header>
 
-<section class="image-grid">
-    <div class="reveal">
-        <img src="https://images.unsplash.com/photo-1508514177221-18d1427d5a4f?auto=format&fit=crop&q=80&w=1000" alt="Wind Turbine Close-up" class="wind-img">
-    </div>
-</section>
+    <section id="about" class="container">
+        <h2>About Wind Energy</h2>
+        <p>Wind energy is the process by which the wind is used to generate mechanical power or electricity. Wind turbines convert the kinetic energy in the wind into mechanical power.</p>
+        
+        
 
-<script src="script.js"></script>
+[Image of a diagram showing how a wind turbine works]
+
+
+        <div class="features">
+            <div class="card">
+                <h3>Renewable</h3>
+                <p>The wind will never run out, unlike fossil fuels.</p>
+            </div>
+            <div class="card">
+                <h3>Clean</h3>
+                <p>No air or water pollution is produced during generation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="calculator-section">
+        <div class="container">
+            <h2>Quick Energy Check</h2>
+            <p>Enter the wind speed to see potential power output:</p>
+            <input type="number" id="speedInput" placeholder="Wind speed in mph...">
+            <button onclick="calculatePower()">Calculate</button>
+            <p id="result"></p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
