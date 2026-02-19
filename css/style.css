@@ -1,152 +1,92 @@
-:root {
-  --primary-glow: rgba(0, 255, 200, 0.5);
-  --glass-bg: rgba(255, 255, 255, 0.07);
-  --text-color: #ffffff;
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-color);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-
-  /* Advanced Animated Background */
-  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* 1. Background Image Layer with Overlay */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&q=80') center/cover no-repeat;
-  opacity: 0.4; /* Fades the image to let the animated gradient show through */
-  z-index: -1;
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-color);
-  
-  /* Change this line */
-  min-height: 100vh; 
-  
-  /* Change this line */
-  overflow-y: auto; 
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+/* Navigation */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background: rgba(255, 255, 255, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* 2. Interactive Container */
-.container {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 60px;
-  border-radius: 30px;
-  max-width: 400px;
-<p align="center">
-</p>
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
 }
 
-/* Hover Effect: Container lifts up */
-.container:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 35px 70px rgba(0, 255, 200, 0.2);
-  border: 1px solid rgba(0, 255, 200, 0.4);
+.logo span { color: #1abc9c; }
+
+#navbar ul { display: flex; list-style: none; }
+#navbar ul li a {
+    text-decoration: none;
+    color: #34495e;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-/* 3. The Windmill Icon with Glow */
-.windmill {
-  width: 150px;
-  filter: drop-shadow(0 0 15px var(--primary-glow));
-  animation: spin 4s linear infinite;
-  transition: animation-duration 0.5s ease;
+#navbar ul li a:hover, .active { color: #1abc9c !important; }
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
 }
 
-/* Interactive Trick: Windmill spins faster on hover! */
-.container:hover .windmill {
-  animation-duration: 1s; /* It "catches the wind" when you hover */
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+.hero-content span { color: #1abc9c; }
+
+.btn {
+    display: inline-block;
+    background: #1abc9c;
+    color: white;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: 0.3s;
 }
 
-/* 4. Animations */
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.btn:hover { background: #16a085; transform: translateY(-3px); }
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 5rem 10%;
+    text-align: center;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* Text Styling */
-h1 {
-  font-weight: 700;
-  letter-spacing: 3px;
-  margin-top: 20px;
-  background: linear-gradient(to right, #fff, #00ffc8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.interactive-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-/* Layout for the navigation bar */
-.navbar {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-  justify-content: center;
-  background-color: #f8f9fa;
-}
-
-/* Base style for your buttons */
-.nav-btn {
-  text-decoration: none;
-  font-family: sans-serif;
-  font-weight: bold;
-  color: #333;
-  padding: 10px 20px;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  
-  /* This makes the hover effect smooth instead of instant */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* The Interaction: What happens on hover */
-.nav-btn:hover {
-  color: #007bff; /* Changes text color to blue */
-  background-color: #ffffff;
-  border-color: #007bff;
-  
-  /* Lifts the button slightly and adds a shadow */
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-}
-
-/* The Interaction: What happens when you click */
-.nav-btn:active {
-  transform: translateY(0); /* Pushes the button back down */
-  box-shadow: none;
-}
+.card i { font-size: 3rem; color: #1abc9c; margin-bottom: 1rem; }
