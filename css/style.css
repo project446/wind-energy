@@ -58,7 +58,8 @@ body {
   padding: 60px;
   border-radius: 30px;
   max-width: 400px;
-  text-align: center;
+<p align="center">
+</p>
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -105,4 +106,15 @@ h1 {
   background: linear-gradient(to right, #fff, #00ffc8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.interactive-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.interactive-card:hover {
+  /* Scales the element up by 5% */
+  transform: scale(1.05);
+  /* Adds a soft glow/shadow to make it "pop" */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
