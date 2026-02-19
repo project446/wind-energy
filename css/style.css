@@ -111,3 +111,42 @@ h1 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
+/* Layout for the navigation bar */
+.navbar {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+/* Base style for your buttons */
+.nav-btn {
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #333;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  
+  /* This makes the hover effect smooth instead of instant */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* The Interaction: What happens on hover */
+.nav-btn:hover {
+  color: #007bff; /* Changes text color to blue */
+  background-color: #ffffff;
+  border-color: #007bff;
+  
+  /* Lifts the button slightly and adds a shadow */
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* The Interaction: What happens when you click */
+.nav-btn:active {
+  transform: translateY(0); /* Pushes the button back down */
+  box-shadow: none;
+}
