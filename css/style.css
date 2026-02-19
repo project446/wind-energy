@@ -1,15 +1,63 @@
+/* 1. Global Reset & Body Setup */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  color: rgb(92, 69, 190);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff; /* White text looks better on dark overlays */
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  /* Combined background property */
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
-              url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=1920&auto=format&fit=crop&q=80') 
-              center/cover no-repeat fixed aqua;
+  /* Windmill Background: Modern Turbine with a dark overlay for readability */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), 
+              url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&q=80') 
+              center/cover no-repeat fixed #34495e;
+}
+
+/* 2. The Glass Container */
+.container {
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  backdrop-filter: blur(12px); /* Blurred glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  padding: 50px;
+  border-radius: 24px;
+  max-width: 450px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* 3. The Windmill Icon/Image */
+.windmill {
+  width: 120px;
+  height: auto;
+  margin: 0 auto 30px;
+  display: block;
+  /* Applying the spinning animation */
+  animation: spin 6s linear infinite; 
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+/* 4. The Spin Animation Logic */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 5. Simple Typography */
+h1 {
+  margin: 0 0 10px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
