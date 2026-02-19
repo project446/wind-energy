@@ -1,63 +1,89 @@
-/* 1. Global Reset & Body Setup */
+:root {
+  --primary-glow: rgba(0, 255, 200, 0.5);
+  --glass-bg: rgba(255, 255, 255, 0.07);
+  --text-color: #ffffff;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff; /* White text looks better on dark overlays */
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
-  
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), 
-              url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&q=80') 
-              center/cover no-repeat fixed #34495e;
+  /* Advanced Animated Background */
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
 }
 
-/* 2. The Glass Container */
+/* 1. Background Image Layer with Overlay */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&q=80') center/cover no-repeat;
+  opacity: 0.4; /* Fades the image to let the animated gradient show through */
+  z-index: -1;
+}
+
+/* 2. Interactive Container */
 .container {
-  background: rgba(255, 255, 255, 0.1); /* Transparent white */
-  backdrop-filter: blur(12px); /* Blurred glass effect */
-  -webkit-backdrop-filter: blur(12px);
-  padding: 50px;
-  border-radius: 24px;
-  max-width: 450px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 60px;
+  border-radius: 30px;
+  max-width: 400px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-/* 3. The Windmill Icon/Image */
+/* Hover Effect: Container lifts up */
+.container:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 35px 70px rgba(0, 255, 200, 0.2);
+  border: 1px solid rgba(0, 255, 200, 0.4);
+}
+
+/* 3. The Windmill Icon with Glow */
 .windmill {
-  width: 120px;
-  height: auto;
-  margin: 0 auto 30px;
-  display: block;
-  /* Applying the spinning animation */
-  animation: spin 6s linear infinite; 
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  width: 150px;
+  filter: drop-shadow(0 0 15px var(--primary-glow));
+  animation: spin 4s linear infinite;
+  transition: animation-duration 0.5s ease;
 }
 
-/* 4. The Spin Animation Logic */
+/* Interactive Trick: Windmill spins faster on hover! */
+.container:hover .windmill {
+  animation-duration: 1s; /* It "catches the wind" when you hover */
+}
+
+/* 4. Animations */
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* 5. Simple Typography */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Text Styling */
 h1 {
-  margin: 0 0 10px;
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-p {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-top: 20px;
+  background: linear-gradient(to right, #fff, #00ffc8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
